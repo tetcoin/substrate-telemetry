@@ -5,7 +5,7 @@
 
 ## Overview
 
-This repository contains both the backend ingestion server for Substrate Telemetry as well as the Frontend you typically see running at [telemetry.polkadot.io](https://telemetry.polkadot.io/).
+This repository contains both the backend ingestion server for Tetcore Telemetry as well as the Frontend you typically see running at [telemetry.polkadot.io](https://telemetry.polkadot.io/).
 
 The backend is a Rust project and the frontend is React/Typescript project.
 
