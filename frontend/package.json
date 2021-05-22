@@ -1,5 +1,5 @@
 {
-  "name": "@dotstats/frontend",
+  "name": "@tetstats/frontend",
   "version": "0.2.1",
   "author": "Parity Technologies Ltd. <admin@parity.io>",
   "license": "GPL-3.0",
@@ -16,7 +16,7 @@
     "clean": "rm -rf node_modules build .nyc env-config.js report*.json yarn-error.log"
   },
   "dependencies": {
-    "@tetcoin/util-crypto": "^2.8.1",
+    "@tetcoin/util-crypto": "2.8.1-a",
     "@types/react-measure": "^2.0.6",
     "blakejs": "^1.1.0",
     "husky": "^4.2.5",
@@ -58,7 +58,7 @@
     "dot-prop": ">=4.2.1",
     "lodash": ">=4.17.19",
     "serialize-javascript": ">=3.1.0",
-    "js-yaml": ">=3.13.1",
+    "js-yaml": ">=4.1.0",
     "webpack-dev-server": "^2.11.4",
     "mem": ">=4.0.0"
   }
