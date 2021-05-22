@@ -114,7 +114,7 @@ impl NodeConnector {
                     // FIXME: Use genesis hash instead of names to avoid this mess
                     match &*node.chain {
                         "Kusama CC3" => node.chain = "Kusama".into(),
-                        "Polkadot CC1" => node.chain = "Polkadot".into(),
+                        "Tetcoin CC1" => node.chain = "Tetcoin".into(),
                         _ => (),
                     }
 

@@ -7,7 +7,7 @@
 //
 // https://github.com/paritytech/oo7/blob/251ba2b7c45503b68eab4320c270b5afa9bccb60/packages/polkadot-identicon/src/index.jsx
 import * as React from 'react';
-import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
+import { blake2AsU8a, decodeAddress } from '@tetcoin/util-crypto';
 import { getSVGShadowRoot, W3SVG } from '../utils';
 
 interface Circle {
@@ -190,7 +190,7 @@ function generate(address: string, isSixPoint = false): Circle[] {
   );
 }
 
-export namespace PolkadotIcon {
+export namespace TetcoinIcon {
   export interface Props {
     account: string;
     size: number;
@@ -226,8 +226,8 @@ function renderShadowIcon(account: string) {
   }
 }
 
-export class PolkadotIcon extends React.Component<PolkadotIcon.Props, {}> {
-  public shouldComponentUpdate(nextProps: PolkadotIcon.Props) {
+export class TetcoinIcon extends React.Component<TetcoinIcon.Props, {}> {
+  public shouldComponentUpdate(nextProps: TetcoinIcon.Props) {
     return (
       this.props.account !== nextProps.account ||
       this.props.size !== nextProps.size

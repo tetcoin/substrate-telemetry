@@ -3,7 +3,7 @@ import * as React from 'react';
 import Measure, { BoundingRect, ContentRect } from 'react-measure';
 import { Types, Maybe } from '../../common';
 
-import { Icon, Tooltip, PolkadotIcon } from '../';
+import { Icon, Tooltip, TetcoinIcon } from '../';
 import Jdenticon from './Jdenticon';
 
 import checkIcon from '../../icons/check.svg';
@@ -267,7 +267,7 @@ export class ConsensusBlock extends React.Component<ConsensusBlock.Props, {}> {
         key={'authority_' + this.props.height + '_' + authority.Address}
       >
         <div className="nodeAddress" key={'authority_' + authority.Address}>
-          <PolkadotIcon
+          <TetcoinIcon
             account={authority.Address}
             size={this.props.compact ? 14 : 28}
           />

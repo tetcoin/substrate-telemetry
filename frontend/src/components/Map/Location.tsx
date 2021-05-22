@@ -5,7 +5,7 @@ import {
   milliOrSecond,
   secondsWithPrecision,
 } from '../../utils';
-import { Ago, Icon, PolkadotIcon } from '../';
+import { Ago, Icon, TetcoinIcon } from '../';
 import { Node } from '../../state';
 
 import nodeIcon from '../../icons/server.svg';
@@ -102,7 +102,7 @@ export class Location extends React.Component<Location.Props, Location.State> {
           <td colSpan={5}>
             {trimHash(validator, 30)}
             <span className="Location-validator">
-              <PolkadotIcon account={validator} size={16} />
+              <TetcoinIcon account={validator} size={16} />
             </span>
           </td>
         </tr>

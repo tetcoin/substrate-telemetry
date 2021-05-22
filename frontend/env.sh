@@ -9,8 +9,8 @@ TARGET=./env-config.js
 echo -n > $TARGET
 
 declare -a vars=(
-  "SUBSTRATE_TELEMETRY_URL"
-  "SUBSTRATE_TELEMETRY_SAMPLE"
+  "TETCORE_TELEMETRY_URL"
+  "TETCORE_TELEMETRY_SAMPLE"
 )
 
 echo "window.process_env = {" >> $TARGET

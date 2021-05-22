@@ -19,7 +19,7 @@ server {
 
     listen 3000;
     listen [::]:3000;
-    server_name telemetry.polkadot.io localhost;
+    server_name telemetry.tetcoin.org localhost;
 
     location /feed/ {
         proxy_pass http://127.0.0.1:8000;

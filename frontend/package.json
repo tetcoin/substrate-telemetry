@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "author": "Parity Technologies Ltd. <admin@parity.io>",
   "license": "GPL-3.0",
-  "description": "Polkadot Telemetry frontend",
+  "description": "Tetcoin Telemetry frontend",
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts-ts start",
@@ -16,7 +16,7 @@
     "clean": "rm -rf node_modules build .nyc env-config.js report*.json yarn-error.log"
   },
   "dependencies": {
-    "@polkadot/util-crypto": "^2.8.1",
+    "@tetcoin/util-crypto": "^2.8.1",
     "@types/react-measure": "^2.0.6",
     "blakejs": "^1.1.0",
     "husky": "^4.2.5",

@@ -1,11 +1,11 @@
-![Frontend](https://github.com/paritytech/substrate-telemetry/workflows/Frontend%20CI/badge.svg)
-![Backend](https://github.com/paritytech/substrate-telemetry/workflows/Backend%20CI/badge.svg)
+![Frontend](https://github.com/tetcoin/tetcore-telemetry/workflows/Frontend%20CI/badge.svg)
+![Backend](https://github.com/tetcoin/tetcore-telemetry/workflows/Backend%20CI/badge.svg)
 
 # Tetcore Telemetry
 
 ## Overview
 
-This repository contains both the backend ingestion server for Tetcore Telemetry as well as the Frontend you typically see running at [telemetry.polkadot.io](https://telemetry.polkadot.io/).
+This repository contains both the backend ingestion server for Tetcore Telemetry as well as the Frontend you typically see running at [telemetry.tetcoin.org](https://telemetry.tetcoin.org/).
 
 The backend is a Rust project and the frontend is React/Typescript project.
 
@@ -46,15 +46,15 @@ yarn start
 
 ### Terminal 3 - Node
 
-Follow up installation instructions from the [Polkadot repo](https://github.com/paritytech/polkadot)
+Follow up installation instructions from the [Tetcoin repo](https://github.com/tetcoin/tetcoin)
 
 ```sh
-polkadot --dev --telemetry-url ws://localhost:8000/submit
+tetcoin --dev --telemetry-url ws://localhost:8000/submit
 ```
 
 ## Docker
 
-*Pre-built docker images are available at `parity/substrate-telemetry-frontend` and `parity/substrate-telemetry-backend`.*
+*Pre-built docker images are available at `parity/tetcore-telemetry-frontend` and `parity/tetcore-telemetry-backend`.*
 
 ### Run the backend and frontend
 
@@ -65,28 +65,28 @@ Let's start the backend first. We will be using the published [chevdor](https://
 
 ```
 docker run --rm -i --name backend -p 8000:8000 \
-  chevdor/substrate-telemetry-backend -l 0.0.0.0:8000
+  chevdor/tetcore-telemetry-backend -l 0.0.0.0:8000
 ```
 
 Let's now start the frontend:
 
 ```
 docker run --rm -i --name frontend --link backend -p 80:80 \
-  -e SUBSTRATE_TELEMETRY_URL=ws://localhost:8000/feed \
-  chevdor/substrate-telemetry-frontend
+  -e TETCORE_TELEMETRY_URL=ws://localhost:8000/feed \
+  chevdor/tetcore-telemetry-frontend
 ```
 
 WARNING: Do not forget the `/feed` part of the URL...
 
-NOTE: Here we used `SUBSTRATE_TELEMETRY_URL=ws://localhost:8000/feed`. This will work if you test with everything running locally on your machine but NOT if your backend runs on a remote server. Keep in mind that the frontend docker image is serving a static site running your browser. The `SUBSTRATE_TELEMETRY_URL` is the WebSocket url that your browser will use to reach the backend. Say your backend runs on a remore server at `192.168.0.100`, you will need to set the IP/url accordingly in `SUBSTRATE_TELEMETRY_URL`.
+NOTE: Here we used `TETCORE_TELEMETRY_URL=ws://localhost:8000/feed`. This will work if you test with everything running locally on your machine but NOT if your backend runs on a remote server. Keep in mind that the frontend docker image is serving a static site running your browser. The `TETCORE_TELEMETRY_URL` is the WebSocket url that your browser will use to reach the backend. Say your backend runs on a remore server at `192.168.0.100`, you will need to set the IP/url accordingly in `TETCORE_TELEMETRY_URL`.
 
 At that point, you can already open your browser at [http://localhost](http://localhost/) and see that telemetry is waiting for data.
 
 Let's bring some data in with  a node:
 
 ```
-docker run --rm -i --name substrate --link backend -p 9944:9944 \
-  chevdor/substrate substrate --dev --telemetry-url 'ws://backend:8000/submit 0'
+docker run --rm -i --name tetcore --link backend -p 9944:9944 \
+  chevdor/tetcore tetcore --dev --telemetry-url 'ws://backend:8000/submit 0'
 ```
 
 You should now see your node showing up in your local [telemetry frontend](http://localhost/):

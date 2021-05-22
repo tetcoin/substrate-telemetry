@@ -1,7 +1,7 @@
 #### BUILDER IMAGE -- quite big one ####
 FROM paritytech/musl-ci-linux as builder
 LABEL maintainer="Daniel Maricic daniel@woss.io"
-LABEL description="Polkadot Telemetry backend builder image"
+LABEL description="Tetcoin Telemetry backend builder image"
 
 ARG PROFILE=release
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN cargo build --${PROFILE} --bins --target x86_64-unknown-linux-musl
 # MAIN IMAGE FOR PEOPLE TO PULL --- small one#
 FROM scratch
 LABEL maintainer="Daniel Maricic daniel@woss.io"
-LABEL description="Polkadot Telemetry backend, static build"
+LABEL description="Tetcoin Telemetry backend, static build"
 
 ARG PROFILE=release
 WORKDIR /usr/local/bin

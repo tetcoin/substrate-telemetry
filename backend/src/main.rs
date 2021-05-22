@@ -22,8 +22,8 @@ use util::{Locator, LocatorFactory};
 
 const VERSION: &'static str = env!("CARGO_PKG_VERSION");
 const AUTHORS: &'static str = env!("CARGO_PKG_AUTHORS");
-const NAME: &'static str = "Substrate Telemetry Backend";
-const ABOUT: &'static str = "This is the Telemetry Backend that injects and provide the data sent by Substrate/Polkadot nodes";
+const NAME: &'static str = "Tetcore Telemetry Backend";
+const ABOUT: &'static str = "This is the Telemetry Backend that injects and provide the data sent by Tetcore/Tetcoi nodes";
 
 #[derive(Clap)]
 #[clap(name = NAME, version = VERSION, author = AUTHORS, about = ABOUT)]

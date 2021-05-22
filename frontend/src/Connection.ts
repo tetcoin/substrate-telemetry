@@ -39,7 +39,7 @@ export class Connection {
   private static readonly address = Connection.getAddress();
 
   private static getAddress(): string {
-    const ENV_URL = 'SUBSTRATE_TELEMETRY_URL';
+    const ENV_URL = 'TETCORE_TELEMETRY_URL';
 
     if (process.env && process.env[ENV_URL]) {
       return process.env[ENV_URL] as string;

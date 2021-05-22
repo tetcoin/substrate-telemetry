@@ -4,7 +4,7 @@ import { Column } from './components/List';
 
 export const PINNED_CHAINS = {
   Kusama: 2,
-  Polkadot: 1,
+  Tetcoin: 1,
 };
 
 export function comparePinnedChains(a: string, b: string) {

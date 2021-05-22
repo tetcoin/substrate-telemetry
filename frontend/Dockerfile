@@ -1,7 +1,7 @@
 #### BUILDER IMAGE  ####
 FROM node:12 as builder
 LABEL maintainer="Chevdor <chevdor@gmail.com>"
-LABEL description="Polkadot Telemetry frontend builder image"
+LABEL description="Tetcoin Telemetry frontend builder image"
 
 WORKDIR /opt/builder
 
@@ -13,9 +13,9 @@ RUN yarn install && \
 #### OUTPUT IMAGE ####
 FROM nginx:stable-alpine
 LABEL maintainer="Chevdor <chevdor@gmail.com>"
-LABEL description="Polkadot Telemetry frontend"
+LABEL description="Tetcoin Telemetry frontend"
 
-ENV SUBSTRATE_TELEMETRY_URL=
+ENV TETCORE_TELEMETRY_URL=
 
 WORKDIR /usr/share/nginx/html
 
