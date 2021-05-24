@@ -190,9 +190,8 @@ export class ConsensusBlock extends React.Component<ConsensusBlock.Props, {}> {
     let finalizedHash;
 
     if (authority.NodeId != null && this.isFinalized(authority)) {
-      const matrice = this.props.consensusView[authority.Address][
-        authority.Address
-      ];
+      const matrice =
+        this.props.consensusView[authority.Address][authority.Address];
 
       finalizedInfo = matrice.ImplicitFinalized ? (
         <Icon className="implicit" src={finalizedIcon} />

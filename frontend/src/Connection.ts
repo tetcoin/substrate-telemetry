@@ -487,7 +487,7 @@ export class Connection {
     let data: FeedMessage.Data;
 
     if (typeof event.data === 'string') {
-      data = (event.data as any) as FeedMessage.Data;
+      data = event.data as any as FeedMessage.Data;
     } else {
       const u8aData = new Uint8Array(event.data);
 
@@ -498,7 +498,7 @@ export class Connection {
 
       const str = Connection.utf8decoder.decode(event.data);
 
-      data = (str as any) as FeedMessage.Data;
+      data = str as any as FeedMessage.Data;
     }
 
     this.handleMessages(FeedMessage.deserialize(data));

@@ -74,9 +74,7 @@ const OUTER_CIRCLE: Circle = {
   fill: '#eee',
 };
 
-function getRotation(
-  isSixPoint: boolean
-): {
+function getRotation(isSixPoint: boolean): {
   r: number;
   ro2: number;
   r3o4: number;
@@ -177,16 +175,14 @@ function generate(address: string, isSixPoint = false): Circle[] {
   const colors = getColors(address);
 
   return [OUTER_CIRCLE].concat(
-    getCircleXY(isSixPoint).map(
-      ([cx, cy], index): Circle => {
-        return {
-          cx,
-          cy,
-          r: Z,
-          fill: colors[index],
-        };
-      }
-    )
+    getCircleXY(isSixPoint).map(([cx, cy], index): Circle => {
+      return {
+        cx,
+        cy,
+        r: Z,
+        fill: colors[index],
+      };
+    })
   );
 }
 
